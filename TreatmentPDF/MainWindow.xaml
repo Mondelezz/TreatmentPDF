@@ -1,0 +1,51 @@
+﻿<Window x:Class="TreatmentPDF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreatmentPDF"
+        mc:Ignorable="d"
+        Title="Zebra" Height="700" Width="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"></RowDefinition>
+            <RowDefinition Height="267*"></RowDefinition>
+            <RowDefinition Height="332*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="399*"></ColumnDefinition>
+            <ColumnDefinition Width="256*"></ColumnDefinition>
+            <ColumnDefinition Width="545*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/zebra.jpg"></ImageBrush>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Left" Height="60" Margin="0,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="521" FontSize="24" FontFamily="Bahnschrift SemiBold SemiCondensed" TextDecorations="Underline"  RenderTransformOrigin="0.5,0.5" Grid.Column="2" Foreground="#FFDCECFB">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.022"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Изменение "/><Run Text="PDF "/><Run Text="файла в соответствии с требованиями пользователя"/><Run Text="."/><LineBreak/></TextBlock>
+        <Button Content="Добавить HTML файл" HorizontalAlignment="Center" Height="48" VerticalAlignment="Top" Width="254" Background="#FFDCECFB" Click=" Button_Click_Add" FontFamily="Bahnschrift SemiBold" RenderTransformOrigin="-0.054,0.691" FontSize="16" Grid.Column="2" BorderBrush="{x:Null}" Margin="0,22,0,0" Grid.Row="2">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button  Content="Преобразовать файл в PDF" HorizontalAlignment="Center" Height="48" Margin="0,92,0,0" VerticalAlignment="Top" Width="254" Background="#FFDCECFA" Click="Button_Click_Update" FontFamily="Bahnschrift SemiBold" FontSize="16" Grid.Column="2" Grid.Row="2" BorderBrush="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <CheckBox Name="deletedAllLinks" Content="Удалить все ссылки http/https" HorizontalAlignment="Left" Height="28" Margin="10,27,0,0" VerticalAlignment="Top" Width="288" FontFamily="Bahnschrift SemiBold" FontSize="18" Grid.Column="2" Foreground="#FFDCECFB" Grid.Row="1" Background="#FFDCECFB"/>
+        <TextBlock x:Name="statusTextBlock" TextWrapping="Wrap" Margin="39,239,22,43" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="18" Grid.Column="2" Grid.Row="2" FontWeight="Bold" Foreground="#FFDCECFB"/>
+
+    </Grid>
+</Window>
